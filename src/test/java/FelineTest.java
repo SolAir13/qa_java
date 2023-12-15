@@ -41,10 +41,10 @@ public class FelineTest {
     }
     @Test
     public void testEatMeat() throws Exception {
-        List<String> meal_list = List.of("Животные", "Птицы", "Рыбы");
-        Mockito.when(feline.eatMeat()).thenReturn(meal_list);
+        List<String> mealList = List.of("Животные", "Птицы", "Рыбы");
+        Mockito.when(feline.eatMeat()).thenReturn(mealList);
         List<String> food = feline.eatMeat();
         // Проверяем, что список еды содержит ожидаемые значения
-        Assert.assertEquals(food, meal_list);
+        Assert.assertEquals(food, mealList);
     }
 }

@@ -38,14 +38,10 @@ public class LionTest {
     }
 
     @Test
-    public void testLionConstructorInvalidSex() throws Exception {
-        try {
-            Lion lion = new Lion("INVALID", feline);
-            fail("Ожидалось выбрасывание исключения");
-        } catch (Exception own) {
-            Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", own.getMessage());
+    public void testLionConstructorInvalidSex() {
+        Exception exception = Assert.assertThrows(Exception.class, () -> new Lion("INVALID", feline));
+        Assert.assertEquals(exception.getMessage(), "Используйте допустимые значения пола животного - самец или самка");
         }
-    }
 
     @Test
     public void testGetKittens() throws Exception {

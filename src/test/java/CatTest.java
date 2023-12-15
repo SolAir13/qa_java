@@ -1,6 +1,8 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -32,10 +34,12 @@ public class CatTest {
         assertEquals(expectedFood, actualFood);
     }
 
-    @Test(expected = Exception.class)
-    public void testGetFoodEmptyValues() throws Exception {
-        Cat catWithEmptyValues = new Cat(null);
-        catWithEmptyValues.getFood();
+    @Test
+    public void testGetFoodEmptyValues() {
+        Feline feline = new Feline();
+        Cat catWithEmptyValues = new Cat(feline);
+        Exception exception = Assert.assertThrows(Exception.class, () -> catWithEmptyValues.getFood("dummy"));
+        Assert.assertEquals(exception.getMessage(), "Неизвестный вид животного, используйте значение Травоядное или Хищник");
     }
 
 }

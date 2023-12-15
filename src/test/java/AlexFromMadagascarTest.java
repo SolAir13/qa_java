@@ -27,9 +27,10 @@ public class AlexFromMadagascarTest {
 
     @Test
     public void testGetKittensWhenKittensZero() throws Exception {
+        int zeroKitten = 0;
         AlexFromMadagascar alexFromMadagascar = new AlexFromMadagascar("Самец");
         int kittens = alexFromMadagascar.getKittens();
-        Assert.assertEquals(0, kittens);
+        Assert.assertEquals(zeroKitten, kittens);
     }
 
 
