@@ -45,6 +45,6 @@ public class FelineTest {
         Mockito.when(feline.eatMeat()).thenReturn(mealList);
         List<String> food = feline.eatMeat();
         // Проверяем, что список еды содержит ожидаемые значения
-        Assert.assertEquals(food, mealList);
+        Assert.assertEquals("Значения не соответствуют: ", mealList, food);
     }
 }

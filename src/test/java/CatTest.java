@@ -39,7 +39,7 @@ public class CatTest {
         Feline feline = new Feline();
         Cat catWithEmptyValues = new Cat(feline);
         Exception exception = Assert.assertThrows(Exception.class, () -> catWithEmptyValues.getFood("dummy"));
-        Assert.assertEquals(exception.getMessage(), "Неизвестный вид животного, используйте значение Травоядное или Хищник");
+        Assert.assertEquals("Неизвестный вид животного, используйте значение Травоядное или Хищник", exception.getMessage());
     }
 
 }

@@ -40,7 +40,7 @@ public class LionTest {
     @Test
     public void testLionConstructorInvalidSex() {
         Exception exception = Assert.assertThrows(Exception.class, () -> new Lion("INVALID", feline));
-        Assert.assertEquals(exception.getMessage(), "Используйте допустимые значения пола животного - самец или самка");
+        Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", exception.getMessage());
         }
 
     @Test
@@ -65,7 +65,7 @@ public class LionTest {
         List<String> meal_list = List.of("Животные", "Птицы", "Рыба");
         List<String> food = lion.eatMeat();
         // Проверка списка еды на значения из интерфейса Predator
-        Assert.assertEquals(food, meal_list);
+        Assert.assertEquals(meal_list, food);
     }
 
 }

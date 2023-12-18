@@ -23,7 +23,7 @@ public class LionTestParametrized {
     public void testDoesHaveManeTrue() throws Exception {
         Lion lion = new Lion(sex, feline);
         boolean result = lion.doesHaveMane();
-        assertEquals(result, isMane);
+        assertEquals(isMane, result);
     }
 
     @Parameterized.Parameters
